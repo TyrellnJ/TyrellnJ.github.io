@@ -23,10 +23,11 @@
 						<div class="logo">
 							<span class="icon fa-diamond"></span>
 						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Tyrell Jones Portfolio</h1>
+						<div class = "content">
+						<div class = "inner">
+								<h1>Tyrell Jones Analyst Portfolio</h1> 
 								<p>"Update 5 "</p>
+							
 							</div>
 						</div>
 						<nav>
@@ -42,38 +43,61 @@
 							</ul>
 						</nav>
 					</header>
+					
 
 				<!-- Main -->
 					<div id="main">
 
 						<!-- Intro -->
 
-							<article id="sum">
+							
+								
+								<div class="logo">
+									<span class="icon fa-diamond"></span>
+								</div>
+								<div class="content">
+									<div class="inner">
+										<h1>Tyrell Jones Portfolio</h1> 
+										
+									</div> 
+								</div>
+								
+										
+									
+										<!--<a href="#elements">Elements</a>-->
+									
+
+
+								<article id="sum">
 								<h2 class="major">About</h2>
-								<nav>
-							<ul>
-								<li><a href="#sum">Summary</a></li>
-								<li><a href="#excel">Excel Project</a></li>
-								<li><a href="#tab">Tableau Project</a></li>
-								<li><a href="#sql">SQL Project</a></li>
-								<li><a href="#python">Python Project</a></li>
-								<li><a href="#resume">Resume</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
+								
 								<span class="image main"><img src="images/TyPic.jpg" alt="" /></span>
 								<p>Aspiring Data Analyst with a strong foundation in data visualization, statistical analysis and data driven decision making. 
 								Skilled in SQL for querying large data bases, Excel for data manipulation, Tableau for creating dashboards, and Python for data analysis. 
 								Commited to continuous learning and growth in the field of analytics</p>
 								
-								
-							
+								 		<a href="#sum">Summary |</a>
+										<a href="#excel">Excel Project |</a>
+										<a href="#tab">Tableau Project |</a>
+										<a href="#sql">SQL Project |</a>
+										<a href="#python">Python Project |</a>
+										<a href="#resume">Resume</a> |</li>
+										<a href="#contact">Contact</a>
+
 								</article>
 								
 								<article id="excel">
 								<h2 class="major">Excel Project</h2>
 								<span class="image main"><img src="images/maxresdefault.jpg" alt="" /></span>
+
+								
+								<a href="#excel">Excel Project |</a>
+								<a href="#tab">Tableau Project |</a>
+								<a href="#sql">SQL Project |</a>
+								<a href="#python">Python Project |</a>
+								<a href="#resume">Resume</a> |</li>
+								<a href="#contact">Contact</a>
+
 								</article>
 								
 									<article id="tab">
@@ -87,25 +111,34 @@
 									<script> 
 								const videoElements = document.querySelectorAll('video');
 
-const options = {
-  root: null, // viewport
-  threshold: 0.5 // 50% of the video needs to be visible
-};
+								const options = {
+								root: null, // viewport
+								threshold: 0.5 // 50% of the video needs to be visible
+								};
 
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-	if (entry.isIntersecting) {
-	 // entry.target.play(); // Play when in viewport
-	} else {
-	  entry.target.pause(); // Pause when out of viewport
-	}
-  });
-}, options);
+								const observer = new IntersectionObserver((entries, observer) => {
+								entries.forEach(entry => {
+									if (entry.isIntersecting) {
+									// entry.target.play(); // Play when in viewport
+									} else {
+									entry.target.pause(); // Pause when out of viewport
+									}
+								});
+								}, options);
 
-videoElements.forEach(video => {
-  observer.observe(video); // Start observing each video
-});
+								videoElements.forEach(video => {
+								observer.observe(video); // Start observing each video
+								});
 									</script>
+
+									
+									<a href="#excel">Excel Project |</a>
+									<a href="#tab">Tableau Project |</a>
+									<a href="#sql">SQL Project |</a>
+									<a href="#python">Python Project |</a>
+									<a href="#resume">Resume</a> |</li>
+									<a href="#contact">Contact</a>
+
 								</article>
 								
 
@@ -146,7 +179,7 @@ videoElements.forEach(video => {
 								</article>
 
 
-						<!-- Elements -->
+						<!-- Elements 
 							<article id="elements">
 								<h2 class="major">Elements</h2>
 
@@ -381,7 +414,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 									</form>
 								</section>
 
-							</article>
+							</article>-->
 
 					</div>
 
