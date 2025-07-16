@@ -78,11 +78,35 @@
 								
 									<article id="tab">
 								<h2 class="major">Tableau Project</h2>
-								<video width = "650" controls>
+								<video width = "550" controls>
 									  <source src="vids/haloclip.mp4"  type="video/mp4">
 									  
 									  
 									</video>
+									
+									<script> 
+									let options = {
+									root: null
+									rootMargin: '0px',
+									threshold: .6
+									};
+									let callback = (entries, observer)=>{
+									entries.forEach(entry =>{
+									if(entry.target.id == 'haloclip')
+									{
+									if(entry.isIntersecting)
+									{
+									entry.target.play();
+									}else{
+									entry.target.pause();
+									}
+									}
+									});
+									}
+									
+									let observer = new IntersectionObserver (callback, options);
+									observer.observe(document.querySelector('#haloclip'));
+									</script>
 								</article>
 								
 
