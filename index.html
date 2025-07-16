@@ -85,27 +85,26 @@
 									</video>
 									
 									<script> 
-									let options = {
-									root: null,
-									rootMargin:'0px',
-									threshold: .6
-									};
-									let callback = (entries, observer)=>{
-									entries.forEach(entry =>{
-									if(entry.target.id == 'vids/haloclip')
-									{
-									if(entry.isIntersecting)
-									{
-									entry.target.play();
-									}else{
-									entry.target.pause();
-									}
-									}
-									});
-									}
-									
-									let observer = new IntersectionObserver (callback, options);
-									observer.observe(document.querySelector('#vids/haloclip'));
+								const videoElements = document.querySelectorAll('video');
+
+const options = {
+  root: null, // viewport
+  threshold: 0.5 // 50% of the video needs to be visible
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+	if (entry.isIntersecting) {
+	 // entry.target.play(); // Play when in viewport
+	} else {
+	  entry.target.pause(); // Pause when out of viewport
+	}
+  });
+}, options);
+
+videoElements.forEach(video => {
+  observer.observe(video); // Start observing each video
+});
 									</script>
 								</article>
 								
