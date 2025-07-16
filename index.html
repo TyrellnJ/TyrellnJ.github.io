@@ -92,7 +92,7 @@
 									};
 									let callback = (entries, observer)=>{
 									entries.forEach(entry =>{
-									if(entry.target.id == 'haloclip')
+									if(entry.target.id == 'vids/haloclip')
 									{
 									if(entry.isIntersecting)
 									{
@@ -105,7 +105,7 @@
 									}
 									
 									let observer = new IntersectionObserver (callback, options);
-									observer.observe(document.querySelector('#haloclip'));
+									observer.observe(document.querySelector('#vids/haloclip'));
 									</script>
 								</article>
 								
