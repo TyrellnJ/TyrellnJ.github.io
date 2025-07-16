@@ -86,8 +86,8 @@
 									
 									<script> 
 									let options = {
-									root: null
-									rootMargin: '0px',
+									root: null,
+									rootMargin:'0px',
 									threshold: .6
 									};
 									let callback = (entries, observer)=>{
@@ -105,7 +105,7 @@
 									}
 									
 									let observer = new IntersectionObserver (callback, options);
-									Observer.observe(document.querySelector('#haloclip'));
+									observer.observe(document.querySelector('#haloclip'));
 									</script>
 								</article>
 								
