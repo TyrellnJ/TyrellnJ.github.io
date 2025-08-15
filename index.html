@@ -74,15 +74,15 @@
 
 			<article id="sum">
 				<h2 class="major">About</h2>
-
-				<span class="image main"><img src="images/TyrellJonesPic.jpg" alt="" /></span>
 				<p>Aspiring Data Analyst with a strong foundation in data visualization, statistical analysis and data
 					driven decision making.
 					Skilled in SQL for querying large data bases, Excel for data manipulation, Tableau for creating
 					dashboards, and Python for data analysis.
 					Commited to continuous learning and growth in the field of analytics</p>
+				<span class="image main"><img src="images/TyrellJonesPic.jpg" width="100" height="700" alt="" /></span>
 
-				<a href="#sum">Summary |</a>
+
+				
 				<a href="#excel">Excel Project |</a>
 				<a href="#tab">Tableau Project |</a>
 				<a href="#sql">SQL Project |</a>
@@ -95,62 +95,57 @@
 			<article id="excel">
 				<h2 class="major">Excel Project</h2>
 
-				
+
 
 				<div id="video-container">
-				  <iframe
-					id="youtube-video"
-					width="460"
-					height="215"
-					src="https://www.youtube.com/embed/OJ13ZqF0c10?enablejsapi=1"
-					title="YouTube video player"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerpolicy="strict-origin-when-cross-origin"
-					allowfullscreen>
-				  </iframe>
+					<iframe id="youtube-video" width="460" height="215"
+						src="https://www.youtube.com/embed/OJ13ZqF0c10?enablejsapi=1" title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+					</iframe>
 				</div>
-			  
-			
-			  
+
+
+
 				<!-- Load YouTube Iframe API -->
 				<script>
-				  let tag = document.createElement('script');
-				  tag.src = "https://www.youtube.com/iframe_api";
-				  document.body.appendChild(tag);
-			  
-				  let player;
-			  
-				  // Called by YouTube API when it's ready
-				  function onYouTubeIframeAPIReady() {
-					player = new YT.Player('youtube-video');
-				  }
-			  
-				  // Pause when video not visible in viewport
-				  const observer = new IntersectionObserver(entries => {
-					entries.forEach(entry => {
-					  if (!entry.isIntersecting && player && typeof player.pauseVideo === 'function') {
-						player.pauseVideo();
-					  }
-					});
-				  }, {
-					threshold: 0.1
-				  });
-			  
-				  // Observe the iframe when it's ready
-				  window.addEventListener('load', () => {
-					const iframe = document.getElementById('youtube-video');
-					observer.observe(iframe);
-				  });
-			  
-				  // Pause when switching tabs or minimizing the window
-				  document.addEventListener('visibilitychange', () => {
-					if (document.hidden && player && typeof player.pauseVideo === 'function') {
-					  player.pauseVideo();
+					let tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					document.body.appendChild(tag);
+
+					let player;
+
+					// Called by YouTube API when it's ready
+					function onYouTubeIframeAPIReady() {
+						player = new YT.Player('youtube-video');
 					}
-				  });
+
+					// Pause when video not visible in viewport
+					const observer = new IntersectionObserver(entries => {
+						entries.forEach(entry => {
+							if (!entry.isIntersecting && player && typeof player.pauseVideo === 'function') {
+								player.pauseVideo();
+							}
+						});
+					}, {
+						threshold: 0.1
+					});
+
+					// Observe the iframe when it's ready
+					window.addEventListener('load', () => {
+						const iframe = document.getElementById('youtube-video');
+						observer.observe(iframe);
+					});
+
+					// Pause when switching tabs or minimizing the window
+					document.addEventListener('visibilitychange', () => {
+						if (document.hidden && player && typeof player.pauseVideo === 'function') {
+							player.pauseVideo();
+						}
+					});
 				</script>
-			  
+
 
 
 				<a href="#excel">Excel Project |</a>
