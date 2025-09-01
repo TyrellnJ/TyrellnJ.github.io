@@ -49,7 +49,7 @@
 				.nav-box {
 					border: 2px solid #ccc;
 					padding: 20px;
-					max-width: 550px;
+					max-width: 560px;
 
 					border-radius: 8px;
 					margin: 30px auto;
@@ -91,16 +91,16 @@
 				decision making.<br>
 				Skilled in SQL for querying large databases, Excel for data manipulation, Tableau for creating
 				dashboards,<br>
-				and Python for data analysis. 
+				and Python for data analysis.
 
 			</p>
 			<nav>
 				<ul>
 
 					<li><a href="#excel">Excel Project</a></li>
-					<li><a href="#tab">Tableau Project (Coming Soon)</a></li>
-					<li><a href="#sql">SQL Project (Coming Soon)</a></li>
+					<li><a href="#sql">SQL Project (Coming Soon) </a></li>
 					<li><a href="#python">Python Project (Coming Soon)</a></li>
+					<li><a href="#tab">Tableau Project</a></li>
 					<li><a href="#resume">Resume</a></li>
 					<!-- <li><a href="#contact">Contact</a></li> -->
 					<!-- <li><a href="#elements">Elements</a></li> -->
@@ -138,17 +138,12 @@
 					<a href="#tab">Tableau Project |</a>
 					<a href="#sql">SQL Project |</a>
 					<a href="#python">Python Project |</a>
-					<a href="#resume">Resume</a> </li>
+					<a href="https://github.com/TyrellnJ/TyrellnJ.github.io" target="_blank">GitHub|</a>
+					<a href="#resume">Resume</a>
 				</div>
 				<br>
 
 				<h2 class="major">Excel Project</h2>
-
-
-
-
-
-
 
 				<div class="video-container">
 					<div class="video-wrapper">
@@ -214,16 +209,67 @@
 					<a href="#excel">Excel Project |</a>
 					<a href="#sql">SQL Project |</a>
 					<a href="#python">Python Project |</a>
-					<a href="#resume">Resume</a> </li>
+					<a href="https://github.com/TyrellnJ/TyrellnJ.github.io" target="_blank">GitHub|</a>
+					<a href="#resume">Resume</a>
 				</div>
 				<br>
 
 
 				<h2 class="major">Tableau Project</h2>
-				<p class="coming">
-					PROJECT IS COMING SOON
+				<div class="video-container">
+					<div class="video-wrapper">
+						<iframe id="tabyoutube-video" src="https://www.youtube.com/embed/ZXSZzu3H8Kk?enablejsapi=1"
+							title="YouTube video player" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+						</iframe>
+					</div>
+				</div>
 
-				</p>
+
+
+				<!-- Load YouTube Iframe API -->
+				<script>
+					let tabtag = document.createElement('script');
+					tabtag.src = "https://www.youtube.com/iframe_api";
+					document.body.appendChild(tabtag);
+
+					let tabplayer;
+
+					// Called by YouTube API when it's ready
+					function onYouTubeIframeAPIReady() {
+						tabplayer = new YT.Player('tabyoutube-video');
+					}
+
+					// Pause when video not visible in viewport
+					const tabobserver = new IntersectionObserver(entries => {
+						entries.forEach(entry => {
+							if (!entry.isIntersecting && tabplayer && typeof tabplayer.pauseVideo === 'function') {
+								tabplayer.pauseVideo();
+							}
+						});
+					}, {
+						threshold: 0.1
+					});
+
+					// Observe the iframe when it's ready
+					window.addEventListener('load', () => {
+						const iframe = document.getElementById('tabyoutube-video');
+						tabobserver.observe(iframe);
+					});
+
+					// Pause when switching tabs or minimizing the window
+					document.addEventListener('visibilitychange', () => {
+						if (document.hidden && tabplayer && typeof tabplayer.pauseVideo === 'function') {
+							tabplayer.pauseVideo();
+						}
+					});
+				</script>
+
+
+
+
+			</article>
 
 
 
@@ -244,6 +290,7 @@
 					<a href="#excel">Excel Project |</a>
 					<a href="#tab">Tableau Project |</a>
 					<a href="#python">Python Project |</a>
+					<a href="https://github.com/TyrellnJ/TyrellnJ.github.io">GitHub|</a>
 					<a href="#resume">Resume</a> </li>
 				</div>
 				<br>
@@ -266,6 +313,7 @@
 					<a href="#excel">Excel Project |</a>
 					<a href="#tab">Tableau Project |</a>
 					<a href="#sql">SQL Project |</a>
+					<a href="https://github.com/TyrellnJ/TyrellnJ.github.io" target="_blank">GitHub|</a>
 					<a href="#resume">Resume</a> </li>
 				</div>
 				<br>
@@ -276,7 +324,7 @@
 
 				</p>
 
-				
+
 			</article>
 
 
@@ -291,6 +339,7 @@
 					<a href="#tab">Tableau Project |</a>
 					<a href="#sql">SQL Project |</a>
 					<a href="#python">Python Project</a>
+					<a href="https://github.com/TyrellnJ/TyrellnJ.github.io" target="_blank">GitHub|</a>
 				</div>
 				<br>
 				<h2 class="major">Resume</h2>
@@ -298,7 +347,7 @@
 				<a href="resume/Jones_Tyrell Resume Aug 2025.pdf" download>Download Tyrell's Resume</a> <br><br>
 
 
-				
+
 
 			</article>
 
@@ -308,7 +357,8 @@
 
 		<!-- Footer -->
 		<footer id="footer">
-			<p class="copyright">&copy; GitHub Link ---> <a href="https://github.com/tyrellnj">TyrellnJ</a>.</p>
+			<p class="copyright">&copy; GitHub Link ---> <a href="https://github.com/TyrellnJ/TyrellnJ.github.io"
+					target="_blank">TyrellnJ GitHub</a>.</p>
 		</footer>
 
 	</div>
