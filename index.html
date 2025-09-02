@@ -49,7 +49,7 @@
 				.nav-box {
 					border: 2px solid #ccc;
 					padding: 20px;
-					max-width: 600px;
+					max-width: 550px;
 
 					border-radius: 8px;
 					margin: 30px auto;
@@ -148,7 +148,8 @@
 					I am a Data Analyst with a strong foundation in statistical analysis, data visualization and
 					data-driven decision making. My background blends technical expertise in Excel, Python,
 					SQL, and data visualization tools like Tableau, with a business-oriented mindset that
-					focuses on delivering real impact. I am passionate about solving meaningful problems through data and
+					focuses on delivering real impact. I am passionate about solving meaningful problems through data
+					and
 					continuously expanding my skills to stay ahead in a fast-evolving field. Whether working
 					independently or collaboratively, I bring curiosity, clarity, and a results-driven approach to every
 					project.
@@ -223,10 +224,6 @@
 						}
 					});
 				</script>
-
-
-
-
 			</article>
 
 			<!-- TABLEAU PROJECT CODE -->
@@ -301,16 +298,7 @@
 			</article>
 
 
-
-
-
-
-			</article>
-
-
 			<!-- SQL PROJECT CODE -->
-
-
 
 			<article id="sql">
 
@@ -325,10 +313,53 @@
 				<br>
 
 				<h2 class="major">SQL Project</h2>
-				<p class="coming">
-					PROJECT IS COMING SOON
+				<div class="video-container">
+					<div class="video-wrapper">
+						<iframe id="sqlyoutube-video" src="https://www.youtube.com/embed/9gFhEJwl9YM?enablejsapi=1"
+							title="YouTube video player" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+						</iframe>
+					</div>
+				</div>
+				<!-- Load YouTube Iframe API -->
+				<script>
+					let sqltag = document.createElement('script');
+					sqltag.src = "https://www.youtube.com/iframe_api";
+					document.body.appendChild(sqltag);
 
-				</p>
+					let sqlplayer;
+
+					// Called by YouTube API when it's ready
+					function onYouTubeIframeAPIReady() {
+						sqlplayer = new YT.Player('sqlyoutube-video');
+					}
+
+					// Pause when video not visible in viewport
+					const sqlobserver = new IntersectionObserver(entries => {
+						entries.forEach(entry => {
+							if (!entry.isIntersecting && sqlplayer && typeof sqlplayer.pauseVideo === 'function') {
+								sqlplayer.pauseVideo();
+							}
+						});
+					}, {
+						threshold: 0.1
+					});
+
+					// Observe the iframe when it's ready
+					window.addEventListener('load', () => {
+						const iframe = document.getElementById('sqlyoutube-video');
+						sqlobserver.observe(iframe);
+					});
+
+					// Pause when switching tabs or minimizing the window
+					document.addEventListener('visibilitychange', () => {
+						if (document.hidden && sqlplayer && typeof sqlplayer.pauseVideo === 'function') {
+							sqlplayer.pauseVideo();
+						}
+					});
+				</script>
+
 
 
 			</article>
@@ -368,7 +399,7 @@
 					<a href="#tab">Tableau Project |</a>
 					<a href="#sql">SQL Project |</a>
 					<a href="#python">Python Project |</a>
-					<a href="https://github.com/TyrellnJ/TyrellnJ.github.io" target="_blank">GitHub|</a>
+					<a href="https://github.com/TyrellnJ/TyrellnJ.github.io" target="_blank">GitHub</a>
 				</div>
 				<br>
 				<h2 class="major">Resume</h2>
