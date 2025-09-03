@@ -162,6 +162,8 @@
 			<!--EXCEL PROJECT CODE-->
 
 			<article id="excel">
+				
+
 
 				<div class="nav-box">
 					<a href="index.html"> Home |</a>
@@ -174,6 +176,9 @@
 				<br>
 
 				<h2 class="major">Excel Project</h2>
+				<p class="description">
+					* All project files will be on GitHub in the project folder *
+				</p>
 
 				<div class="video-container">
 					<div class="video-wrapper">
@@ -242,6 +247,9 @@
 
 
 				<h2 class="major">Tableau Project</h2>
+				<p class="description">
+					* All project files will be on GitHub in the project folder *
+				</p>
 				<div class="video-container">
 					<div class="video-wrapper">
 						<iframe id="tabyoutube-video" src="https://www.youtube.com/embed/ZXSZzu3H8Kk?enablejsapi=1"
@@ -313,6 +321,9 @@
 				<br>
 
 				<h2 class="major">SQL Project</h2>
+				<p class="description">
+					* All project files will be on GitHub in the project folder *
+				</p>
 				<div class="video-container">
 					<div class="video-wrapper">
 						<iframe id="sqlyoutube-video" src="https://www.youtube.com/embed/9gFhEJwl9YM?enablejsapi=1"
@@ -379,10 +390,58 @@
 				<br>
 
 				<h2 class="major">Python Project</h2>
-				<p class="coming">
-					PROJECT IS COMING SOON
-
+				<p class="description">
+					* All project files will be on GitHub in the project folder *
 				</p>
+				<div class="video-container">
+					<div class="video-wrapper">
+						<iframe id="pyyoutube-video" src="https://www.youtube.com/embed/ZXSZzu3H8Kk?enablejsapi=1"
+							title="YouTube video player" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+						</iframe>
+					</div>
+				</div>
+
+
+
+				<!-- Load YouTube Iframe API -->
+				<script>
+					let pytag = document.createElement('script');
+					pytag.src = "https://www.youtube.com/iframe_api";
+					document.body.appendChild(pytag);
+
+					let pyplayer;
+
+					// Called by YouTube API when it's ready
+					function onYouTubeIframeAPIReady() {
+						pyplayer = new YT.Player('sqlyoutube-video');
+					}
+
+					// Pause when video not visible in viewport
+					const pyobserver = new IntersectionObserver(entries => {
+						entries.forEach(entry => {
+							if (!entry.isIntersecting && pyplayer && typeof pyplayer.pauseVideo === 'function') {
+								pyplayer.pauseVideo();
+							}
+						});
+					}, {
+						threshold: 0.1
+					});
+
+					// Observe the iframe when it's ready
+					window.addEventListener('load', () => {
+						const iframe = document.getElementById('pyyoutube-video');
+						pyobserver.observe(iframe);
+					});
+
+					// Pause when switching tabs or minimizing the window
+					document.addEventListener('visibilitychange', () => {
+						if (document.hidden && pyplayer && typeof pyplayer.pauseVideo === 'function') {
+							pyplayer.pauseVideo();
+						}
+					});
+				</script>
 
 
 			</article>
